@@ -1,5 +1,6 @@
-import { create } from "/node_modules/.vite/deps/zustand.js?v=ceac9857";
-import toast from "/node_modules/.vite/deps/react-hot-toast.js?v=ceac9857";
+import create from "zustand"; // Only import this one
+import toast from "react-hot-toast";
+
 import { axiosInstance } from "/src/lib/axios.js";
 import { useAuthStore } from "/src/store/useAuthStore.js";
 
