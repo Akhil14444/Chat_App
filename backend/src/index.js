@@ -38,9 +38,9 @@ app.use(
 app.use("/api/auth", authRoutes);
 app.use("/api/messages", messageRoutes);
 
-// Serve frontend in production
+// ✅ Serve frontend in production
 if (process.env.NODE_ENV === "production") {
-  const frontendPath = path.join(__dirname, "../frontend/dist");
+  const frontendPath = path.join(__dirname, "../frontend/dist"); // Adjust path if necessary
   app.use(express.static(frontendPath));
 
   app.get("*", (req, res) => {
@@ -49,6 +49,6 @@ if (process.env.NODE_ENV === "production") {
 }
 
 server.listen(PORT, () => {
-  console.log(`Server is running on PORT: ${PORT}`);
+  console.log(`✅ Server running on PORT: ${PORT}`);
   connectDB();
 });
