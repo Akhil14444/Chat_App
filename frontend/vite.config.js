@@ -5,7 +5,7 @@ import react from "@vitejs/plugin-react";
 export default defineConfig({
   plugins: [react()],
   build: {
-    outDir: "frontend/dist", // Ensure the build output is in the correct folder
+    outDir: "dist", // Ensure the build output is in the correct folder
     rollupOptions: {
       external: ["zustand"],
     },
