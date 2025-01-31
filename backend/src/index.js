@@ -13,7 +13,7 @@ dotenv.config();
 const PORT = process.env.PORT || 5001;
 const __dirname = path.resolve();
 
-// Allowed origins for CORS
+// ✅ Allowed origins for CORS
 const allowedOrigins = [
   "http://localhost:5173", // Development frontend
   "https://chat-app-1-y0cp.onrender.com", // Deployed frontend
@@ -35,12 +35,15 @@ app.use(
   })
 );
 
+// ✅ API Routes
 app.use("/api/auth", authRoutes);
 app.use("/api/messages", messageRoutes);
 
-// ✅ Serve frontend in production
+// ✅ Serve Frontend in Production
 if (process.env.NODE_ENV === "production") {
-  const frontendPath = path.join(__dirname, "../frontend/dist"); // Adjust path if necessary
+  const frontendPath = path.join(__dirname, "../frontend/dist"); // Adjust path if needed
+  console.log("Serving frontend from:", frontendPath);
+
   app.use(express.static(frontendPath));
 
   app.get("*", (req, res) => {
